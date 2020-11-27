@@ -1,0 +1,46 @@
+---
+title: "RockstaR Support"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{RockstaR Support}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The package currently has XX AST rewriting rules. Here are a list of the
+basic ones.
+
++-------------+--------------+--------------------+
+| Description | Rockstar     | R                  |
++=============+==============+====================+
+| Comment     | (Rad         | \# Rad comment     |
+|             | comment)     |                    |
++-------------+--------------+--------------------+
+| Not         | mysterious   | ?                  |
+| assigned    |              |                    |
++-------------+--------------+--------------------+
+| Null        | nothing,     | NULL               |
+|             | nowhere,     |                    |
+|             | nobody,      |                    |
+|             | empty, gone  |                    |
++-------------+--------------+--------------------+
+| True        | right, yes,  | TRUE               |
+|             | ok           |                    |
++-------------+--------------+--------------------+
+| False       | wrong, no,   | FALSE              |
+|             | lies         |                    |
++-------------+--------------+--------------------+
+| Assignment  | Put 3 into x | x \<- 3            |
+|             |              |                    |
+|             | Let 3 be x   |                    |
++-------------+--------------+--------------------+

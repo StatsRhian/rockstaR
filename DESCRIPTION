@@ -21,6 +21,9 @@ Imports:
     stringr
 Suggests: 
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 URL: https://github.com/trianglegirl/rockstaR
 BugReports: https://github.com/trianglegirl/rockstaR/issues
+VignetteBuilder: knitr
