@@ -1,6 +1,6 @@
 Package: rockstaR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R Transpiler for the Esoteric Language Rockstar
 Version: 0.1.0
 Author: Rhian Davies
 Maintainer: Rhian Davies <rhian@jumpingrivers.com>
