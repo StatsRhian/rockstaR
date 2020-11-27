@@ -1,6 +1,7 @@
+#' Poetic number string
 #' @importFrom stringr str_detect str_split str_extract str_length
+#' @param line The line to be parsed
 #' @export
-# Poetic number String as number rule
 convert_poetic_number = function(line){
   split = str_extract(line, ".*") # or \\n
   #split = str_remove_all(line, ";|,|'") # Ignore ; , and '
