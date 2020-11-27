@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rockstaR</title>
+<title>Interface for AST rewriting — rewrite • rockstaR</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Interface for AST rewriting — rewrite" />
+<meta property="og:description" content="Interface for AST rewriting" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,78 +106,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Interface for AST rewriting</h1>
+    <small class="dont-index">Source: <a href='https://github.com/trianglegirl/rockstaR/blob/master/R/core-rewrite.R'><code>R/core-rewrite.R</code></a></small>
+    <div class="hidden name"><code>rewrite.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Interface for AST rewriting</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>rewrite</span><span class='op'>(</span><span class='va'>ast</span>, <span class='va'>rules</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="convert_poetic_number.html">convert_poetic_number()</a></code> </p>
-        </td>
-        <td><p>Poetic number string</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="imports.html">imports</a></code> </p>
-        </td>
-        <td><p>Import functions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="make_rule.html">make_rule()</a></code> </p>
-        </td>
-        <td><p>Make a AST transformation rule</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.rule.html">print(<i>&lt;rule&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print function for 'rule' objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rewrite.html">rewrite()</a></code> </p>
-        </td>
-        <td><p>Interface for AST rewriting</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rockstar-to-r-rules.html">default_rules()</a></code> </p>
-        </td>
-        <td><p>Mapping Rockstar operators into R operators</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="transpile.html">transpile()</a></code> </p>
-        </td>
-        <td><p>Compile Rockstar code into R code</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>ast</th>
+      <td><p>A language object.</p></td>
+    </tr>
+    <tr>
+      <th>rules</th>
+      <td><p>A list of functions, each of which is the output from `make_rule`.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A language object.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/trianglegirl/rockstaR'>rockstaR</a></span><span class='op'>)</span>
+
+<span class='va'>rule</span> <span class='op'>=</span> <span class='fu'><a href='make_rule.html'>make_rule</a></span><span class='op'>(</span><span class='st'>"nothing"</span>, <span class='st'>"NULL"</span><span class='op'>)</span>
+<span class='va'>lyrics</span> <span class='op'>=</span> <span class='st'>"Rockstar is nothing"</span>
+<span class='fu'>rewrite</span><span class='op'>(</span><span class='va'>lyrics</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>rule</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "Rockstar is NULL"</div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
