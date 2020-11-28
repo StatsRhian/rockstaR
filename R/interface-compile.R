@@ -7,5 +7,9 @@
 #'
 #' @export
 transpile <- function(x, rules = default_rules()){
-        purrr::map(x, rewrite, rules = rules)
+  x %>%
+    parse_rockstar() %>%
+    cat(file = "lyrics.R", sep = "\n")
+
+  file.show("lyrics.R")
 }
